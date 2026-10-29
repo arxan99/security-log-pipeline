@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "security-log-pipeline"
+version = "0.1.0"
+description = "Ingest, normalise and analyse security logs with MITRE ATT&CK-mapped detections"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Aryan Singh" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+slp = "slp.cli:main"
+
+[tool.setuptools]
+packages = ["slp"]
+
+[tool.ruff]
+line-length = 130
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
